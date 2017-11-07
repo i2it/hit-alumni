@@ -8,21 +8,18 @@ import net.i2it.hit.hitef.service.function.WeChatApi;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
-import java.io.File;
-import java.io.IOException;
 import java.util.Iterator;
 import java.util.List;
 
 @Controller
 @RequestMapping("/wechat/hitef")
 public class FundItemController {
-
-    // TODO 添加记录日志
-    // TODO 我的捐助历史信息
 
     private static final String DEFAULT_FRONT_PAGE = "redirect:/wechat/hitef/items";
     private static final String DEFAULT_BACKEND_PAGE = "redirect:/wechat/hitef/items?type=1";
@@ -79,8 +76,36 @@ public class FundItemController {
         return "client/payForm";
     }
 
-    /*---------------管理后台动作----------------*/
+    // 将*校友年度捐赠*放到*爱心传递基金*前面
+    private void rankFundItem(List<FundItemDO> fundItems, String name, String name_) {
+        FundItemDO fundItem = filterAlumniDonateItem(fundItems, name);
+        if (fundItem != null) {
+            int targetIndex = 0;
+            for (int i = 0; i < fundItems.size(); i++) {
+                if (name_.equals(fundItems.get(i).getName())) {
+                    targetIndex = i;
+                    break;
+                }
+            }
+            fundItems.add(targetIndex, fundItem);
+        }
+    }
 
+    // 如果*校友年度捐赠*存在，从 基金项目列表 将*校友年度捐赠*去除（删除）
+    private FundItemDO filterAlumniDonateItem(List<FundItemDO> fundItems, String name) {
+        Iterator<FundItemDO> iterator = fundItems.iterator();
+        while (iterator.hasNext()) {
+            FundItemDO fundItem = iterator.next();
+            if (name.equals(fundItem.getName())) {
+                iterator.remove();
+                return fundItem;
+            }
+        }
+        return null;
+    }
+
+    /*---------------管理后台动作----------------*/
+    /*
     //管理后台：根据 捐款项目是否已经被终止 去展示
     @GetMapping(value = "/items", params = {"type"})
     public String showFundItemsByType(Integer type, ModelMap map) {
@@ -168,34 +193,6 @@ public class FundItemController {
         return DEFAULT_BACKEND_PAGE;
     }
 
-    // 如果*校友年度捐赠*存在，从 基金项目列表 将*校友年度捐赠*去除（删除）
-    private FundItemDO filterAlumniDonateItem(List<FundItemDO> fundItems, String name) {
-        Iterator<FundItemDO> iterator = fundItems.iterator();
-        while (iterator.hasNext()) {
-            FundItemDO fundItem = iterator.next();
-            if (name.equals(fundItem.getName())) {
-                iterator.remove();
-                return fundItem;
-            }
-        }
-        return null;
-    }
-
-    // 将*校友年度捐赠*放到*爱心传递基金*前面
-    private void rankFundItem(List<FundItemDO> fundItems, String name, String name_) {
-        FundItemDO fundItem = filterAlumniDonateItem(fundItems, name);
-        if (fundItem != null) {
-            int targetIndex = 0;
-            for (int i = 0; i < fundItems.size(); i++) {
-                if (name_.equals(fundItems.get(i).getName())) {
-                    targetIndex = i;
-                    break;
-                }
-            }
-            fundItems.add(targetIndex, fundItem);
-        }
-    }
-
     // 上传图片
     private String upload(MultipartFile file, long timestamp, HttpServletRequest request) {
         String fileName = file.getOriginalFilename();
@@ -222,5 +219,6 @@ public class FundItemController {
         }
         return null;
     }
+    */
 
 }

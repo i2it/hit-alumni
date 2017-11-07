@@ -5,7 +5,7 @@ package net.i2it.hit.hitef.util;
  */
 public class QRCodeUtil {
 
-//    @SuppressWarnings("unchecked")
+//    @SuppressWarnfngs("unchecked")
 //	public static void create(String content, int size, String filepath) {
 //        @SuppressWarnings("rawtypes")
 //		Map hints = new HashMap();
