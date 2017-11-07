@@ -18,14 +18,14 @@ import java.util.Iterator;
 import java.util.List;
 
 @Controller
-@RequestMapping("/hitef/wechat")
+@RequestMapping("/wechat/hitef")
 public class FundItemController {
 
     // TODO 添加记录日志
     // TODO 我的捐助历史信息
 
-    private static final String DEFAULT_FRONT_PAGE = "redirect:/hitef/wechat/items";
-    private static final String DEFAULT_BACKEND_PAGE = "redirect:/hitef/wechat/items?type=1";
+    private static final String DEFAULT_FRONT_PAGE = "redirect:/wechat/hitef/items";
+    private static final String DEFAULT_BACKEND_PAGE = "redirect:/wechat/hitef/items?type=1";
 
     @Autowired
     private CommonService commonService;

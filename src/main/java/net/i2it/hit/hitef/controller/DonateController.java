@@ -26,7 +26,7 @@ import java.util.Map;
  * @author liuming
  */
 @Controller
-@RequestMapping(value = {"/hitef/wechat/donate", "/hitef/wechat/test"})
+@RequestMapping(value = {"/wechat/hitef/donate", "/wechat/hitef/test"})
 public class DonateController {
 
     @Autowired
@@ -41,7 +41,7 @@ public class DonateController {
         //解析提交的下单信息
         PrepayInfoVO prepayInfoVO = donateService.getPrepayVO(payInfo);
         if (prepayInfoVO.getMoney() > 90000000.0) { //捐款上限，避免超出数据库中数值范围
-            return "redirect:/hitef/wechat/items/" + prepayInfoVO.getId();
+            return "redirect:/wechat/hitef/items/" + prepayInfoVO.getId();
         }
         Map<String, Object> map = donateService.getPayRequestInfo(code, prepayInfoVO);
         modelMap.put("fundItemId", prepayInfoVO.getId());
@@ -92,7 +92,7 @@ public class DonateController {
         comment = "".equals(comment) ? null : comment;//但内容为空字符串时，赋值为null
         donatorVO = processDonatorVO(donatorVO);//但对象中的变量内容为空字符串时，赋值为null
         donateService.updateDonatorInfo(outTradeNo, comment, donatorVO);
-        if(null==donatorVO.getTrueName()||"".equals(donatorVO.getTrueName().trim())){
+        if (null == donatorVO.getTrueName() || "".equals(donatorVO.getTrueName().trim())) {
             donatorVO.setTrueName("匿名");
         }
         map.put("donatorName", donatorVO.getTrueName().equals("匿名") ? "校友" : donatorVO.getTrueName());
@@ -119,7 +119,7 @@ public class DonateController {
 
         Date date = str2Date(dateStr);
         if (date == null) {
-            return "redirect:/hitef/wechat/donate/list";
+            return "redirect:/wechat/hitef/donate/list";
         }
 
         List<SimpleDonateVO> donateVOList = donateService.getPageDonateInfos(date);

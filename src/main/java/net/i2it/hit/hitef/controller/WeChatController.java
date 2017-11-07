@@ -17,7 +17,7 @@ import java.util.Arrays;
  * 处理和微信服务器之间的网络交互操作
  */
 @Controller
-@RequestMapping("/hitef/wechat/msg")
+@RequestMapping("/wechat/hitef/msg")
 public class WeChatController {
 
     /**

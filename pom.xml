@@ -4,7 +4,7 @@
     <groupId>net.i2it.hit</groupId>
     <artifactId>hit-alumni</artifactId>
     <packaging>war</packaging>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
     <name>hit-alumni</name>
     <url>http://alumni.hit.edu.cn</url>
     <dependencies>
