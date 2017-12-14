@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
     <title>捐款名录</title>
     <link rel="stylesheet" type="text/css" href="http://res.wx.qq.com/open/libs/weui/1.1.2/weui.min.css">
-    <link rel="stylesheet" type="text/css" href="${applicationScope.globalUrlPrefix}/hitef/wechat/res/css/base.css">
+    <link rel="stylesheet" type="text/css" href="${applicationScope.globalUrlPrefix}/res/css/base.css">
     <style type="text/css">
         #top-area {
             margin-bottom: 20px;
@@ -29,7 +29,7 @@
 </head>
 <body>
 <div class="container js_container">
-    <div id="top-area"><img src="${applicationScope.globalUrlPrefix}/hitef/wechat/res/img/top_img.jpg" width="100%">
+    <div id="top-area"><img src="${applicationScope.globalUrlPrefix}/res/img/top_img.jpg" width="100%">
     </div>
     <c:forEach var="item" items="${donateList}">
         <div class="weui-form-preview">
@@ -38,15 +38,15 @@
                     <label class="weui-form-preview__label">捐助者：</label>
                     <span class="weui-form-preview__value">
                         <c:choose>
-                            <c:when test="${item.donatorName==null}">未知（捐助者未填写）</c:when>
-                            <c:otherwise>${item.donatorName}</c:otherwise>
+                            <c:when test="${item.trueName==null}">未知（捐助者未填写）</c:when>
+                            <c:otherwise>${item.trueName}</c:otherwise>
                         </c:choose>
                     </span>
                 </p>
                 <p>
                     <label class="weui-form-preview__label">金　额：</label>
                     <span class="weui-form-preview__value">￥<fmt:formatNumber pattern="#0.00"
-                                                                              value="${item.donateMoney}"/></span>
+                                                                              value="${item.totalFee}"/></span>
                 </p>
                 <p>
                     <label class="weui-form-preview__label">项　目：</label>
@@ -55,8 +55,7 @@
                 <p>
                     <label class="weui-form-preview__label">时　间：</label>
                     <span class="weui-form-preview__value">
-                        <fmt:formatDate value="${item.donateDate}" pattern="yyyy-MM-dd HH:mm"/>
-                        <c:set var="dateObj" value='${item.donateDate}'/>
+                        <fmt:formatDate value="${item.timeEnd}" pattern="yyyy-MM-dd HH:mm"/>
                     </span>
                 </p>
             </div>
@@ -67,7 +66,7 @@
     <%--暂时不提供上一页功能，用户可通过返回键查看上一页内容--%>
     <%--<a href="">上一页</a>--%>
     <c:if test="${donateList.size()==20}">
-        <a href="${applicationScope.globalUrlPrefix}/hitef/wechat/donate/list?date=<fmt:formatDate value="${dateObj}" pattern="yyyy-MM-dd HH:mm:ss"/>">下一页</a>
+        <a href="${applicationScope.globalUrlPrefix}/donate/list?page=${currentPageIndex}">下一页</a>
     </c:if>
 </div>
 </body>

@@ -1,29 +1,51 @@
 package net.i2it.hit.hitef.domain;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.io.Serializable;
 import java.util.Date;
 
 /**
- * 对应着数据中的t_donate数据表
- * Created by liuming on 2017/4/17.
+ * 数据对象，对应数据库表 hitef_donate_record
+ *
+ * @author liuming
+ * @date 2017/11/18 14:35
  */
+@Entity(name = "hitef_donate_record")
 public class DonateRecordDO implements Serializable {
 
+    @Id
+    @Column(length = 32, nullable = false)
     private String outTradeNo;
+    @Column(length = 128, nullable = false)
     private String openId;
-    private int fundItemId;
+    private Integer fundItemId;
+    @Column(length = 128, nullable = false)
     private String fundItemName;
-    private double totalFee;
+    @Column(precision = 10, scale = 2, nullable = false)
+    private Double totalFee;
+    @Column(length = 10, nullable = false)
     private String origin;
+    @Column(nullable = false)
     private Date timeEnd;
-    private int state;
+    @Column(nullable = false)
+    private Integer state;
+    @Column(length = 1000)
     private String comment;
+    @Column(length = 20)
     private String trueName;
+    @Column(length = 20)
     private String phone;
+    @Column(length = 4)
     private String entryYear;
+    @Column(length = 30)
     private String major;
+    @Column(length = 200)
     private String mailAddr;
+    @Column(length = 150)
     private String company;
+    @Column(length = 100)
     private String job;
 
     public String getOutTradeNo() {
@@ -42,6 +64,14 @@ public class DonateRecordDO implements Serializable {
         this.openId = openId;
     }
 
+    public Integer getFundItemId() {
+        return fundItemId;
+    }
+
+    public void setFundItemId(Integer fundItemId) {
+        this.fundItemId = fundItemId;
+    }
+
     public String getFundItemName() {
         return fundItemName;
     }
@@ -50,19 +80,11 @@ public class DonateRecordDO implements Serializable {
         this.fundItemName = fundItemName;
     }
 
-    public int getFundItemId() {
-        return fundItemId;
-    }
-
-    public void setFundItemId(int fundItemId) {
-        this.fundItemId = fundItemId;
-    }
-
-    public double getTotalFee() {
+    public Double getTotalFee() {
         return totalFee;
     }
 
-    public void setTotalFee(double totalFee) {
+    public void setTotalFee(Double totalFee) {
         this.totalFee = totalFee;
     }
 
@@ -82,11 +104,11 @@ public class DonateRecordDO implements Serializable {
         this.timeEnd = timeEnd;
     }
 
-    public int getState() {
+    public Integer getState() {
         return state;
     }
 
-    public void setState(int state) {
+    public void setState(Integer state) {
         this.state = state;
     }
 
@@ -152,28 +174,6 @@ public class DonateRecordDO implements Serializable {
 
     public void setJob(String job) {
         this.job = job;
-    }
-
-    @Override
-    public String toString() {
-        return "DonateRecordDO{" +
-                "outTradeNo='" + outTradeNo + '\'' +
-                ", openId='" + openId + '\'' +
-                ", fundItemName='" + fundItemName + '\'' +
-                ", fundItemId=" + fundItemId +
-                ", totalFee=" + totalFee +
-                ", origin='" + origin + '\'' +
-                ", timeEnd=" + timeEnd +
-                ", state=" + state +
-                ", comment='" + comment + '\'' +
-                ", trueName='" + trueName + '\'' +
-                ", phone='" + phone + '\'' +
-                ", entryYear='" + entryYear + '\'' +
-                ", major='" + major + '\'' +
-                ", mailAddr='" + mailAddr + '\'' +
-                ", company='" + company + '\'' +
-                ", job='" + job + '\'' +
-                '}';
     }
 
 }

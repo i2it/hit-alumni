@@ -4,7 +4,6 @@ import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.tagext.TagSupport;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 
 public class FormatDateTag extends TagSupport {
 
@@ -24,7 +23,7 @@ public class FormatDateTag extends TagSupport {
     public int doStartTag() throws JspException {
         SimpleDateFormat dateFormat = new SimpleDateFormat(pattern);
         String result = dateFormat.format(value * 1000);
-            try {
+        try {
             pageContext.getOut().write(result);
         } catch (IOException e) {
             e.printStackTrace();

@@ -1,5 +1,11 @@
 package net.i2it.hit.hitef.domain;
 
+/**
+ * 简略的支付信息类
+ *
+ * @author liuming
+ * @date 2017/11/16 19:15
+ */
 public class PrepayInfoVO {
 
     private int id;

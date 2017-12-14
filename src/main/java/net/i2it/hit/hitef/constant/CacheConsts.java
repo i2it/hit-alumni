@@ -16,9 +16,4 @@ public class CacheConsts {
      */
     public static String JS_API_TICKET;
 
-    /**
-     * 记录用户等需要的access_token和jsapi_ticket最后一次的生成时间，用于控制他们的生成时间
-     */
-    public static long LAST_REFRESH_TIME = 0;
-
 }

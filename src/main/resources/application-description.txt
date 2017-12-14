@@ -1,0 +1,10 @@
+app-id: 公众号开发信息中的开发者ID
+app-secret: 公众号开发信息中的开大这密码
+token: 服务器配置中的令牌（Token）
+mch-id: 微信支付中商户id
+api-secret: 微信支付中的key
+js-sdk-debug: 微信网页开发是否开启js sdk调试
+js-api-list: 微信网页开发，需要开启的js sdk列表，多个功能以英文逗号隔开
+server-domain-url: 微信应用部署所在服务器对应的域名url
+pay-url: 支付请求（动作）对应的url
+certification-path：证书的存储路径

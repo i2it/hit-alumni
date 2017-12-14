@@ -1,11 +1,20 @@
 package net.i2it.hit.hitef.domain.api.request;
 
-import net.i2it.hit.hitef.constant.ConfigConsts;
+import net.i2it.hit.hitef.constant.AppConfigProperties;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 /**
  * 调用微信的js sdk时进行配置所需的参数
+ *
+ * @author liuming
+ * @date 2017/11/15 21:12
  */
+@Component
 public class JsSdkConfigVO {
+
+    @Autowired
+    private AppConfigProperties appConfigProperties;
 
     private boolean debug;
     private String appId;
@@ -15,8 +24,8 @@ public class JsSdkConfigVO {
     private String jsApiList;
 
     public JsSdkConfigVO() {
-        this.debug = ConfigConsts.isJs_sdk_debug();
-        this.jsApiList = ConfigConsts.getJs_api_list();
+        this.debug = appConfigProperties.isJsSdkDebuged();
+        this.jsApiList = appConfigProperties.getJsApiList();
     }
 
     public JsSdkConfigVO(String appId, int timestamp, String nonceStr, String signature) {
@@ -24,8 +33,8 @@ public class JsSdkConfigVO {
         this.timestamp = timestamp;
         this.nonceStr = nonceStr;
         this.signature = signature;
-        this.debug = ConfigConsts.isJs_sdk_debug();
-        this.jsApiList = ConfigConsts.getJs_api_list();
+        this.debug = appConfigProperties.isJsSdkDebuged();
+        this.jsApiList = appConfigProperties.getJsApiList();
     }
 
     public boolean isDebug() {

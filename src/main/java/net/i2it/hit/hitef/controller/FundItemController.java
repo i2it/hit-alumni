@@ -1,16 +1,15 @@
 package net.i2it.hit.hitef.controller;
 
-import net.i2it.hit.hitef.constant.ConfigConsts;
+import net.i2it.hit.hitef.constant.AppConfigProperties;
 import net.i2it.hit.hitef.domain.FundItemDO;
+import net.i2it.hit.hitef.processor.JsSdkConfigProcessor;
 import net.i2it.hit.hitef.service.FundInfoService;
-import net.i2it.hit.hitef.service.function.CommonService;
-import net.i2it.hit.hitef.service.function.WeChatApi;
+import net.i2it.wechat.constant.WeChatApiUrlConsts;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
@@ -18,14 +17,16 @@ import java.util.Iterator;
 import java.util.List;
 
 @Controller
-@RequestMapping("/wechat/hitef")
 public class FundItemController {
+
+    @Autowired
+    private AppConfigProperties appConfigProperties;
 
     private static final String DEFAULT_FRONT_PAGE = "redirect:/wechat/hitef/items";
     private static final String DEFAULT_BACKEND_PAGE = "redirect:/wechat/hitef/items?type=1";
 
     @Autowired
-    private CommonService commonService;
+    private JsSdkConfigProcessor jsSdkConfigProcessor;
     @Autowired
     private FundInfoService fundInfoService;
 
@@ -35,7 +36,7 @@ public class FundItemController {
     @GetMapping(value = "/items")
     public String showFundItemsByQueryType(@RequestParam(value = "q", required = false) String q,
                                            HttpServletRequest request, ModelMap map) {
-        map.put("jsSdkConfig", commonService.getJsSdkConfig(request));//调用微信页面js sdk功能需要的配置信息
+        map.put("jsSdkConfig", jsSdkConfigProcessor.getJsSdkConfig(request));//调用微信页面js sdk功能需要的配置信息
         String name = "校友年度捐赠";
         String name_ = "爱心传递基金";
         if ("school".equals(q)) {//展示 特别推荐（校级基金）
@@ -60,7 +61,7 @@ public class FundItemController {
     @GetMapping(value = "/items/{id}")
     public String showFundItem(@PathVariable(value = "id") Integer id,
                                HttpServletRequest request, ModelMap map) {
-        map.put("jsSdkConfig", commonService.getJsSdkConfig(request));//调用微信页面js sdk功能需要的配置信息
+        map.put("jsSdkConfig", jsSdkConfigProcessor.getJsSdkConfig(request));//调用微信页面js sdk功能需要的配置信息
         //先判断该id的基金项目是否存在
         FundItemDO fundItemDO = fundInfoService.getFundItemById(id);
         if (fundItemDO == null) {//不存在
@@ -69,9 +70,9 @@ public class FundItemController {
         //基金项目存在时，才执行更新
         //进入某一个筹款基金项目的页面
         map.put("item", fundItemDO);//获取某个筹款项目的信息
-        map.put("redirectUrl", ConfigConsts.getPay_url());//对应着实际支付动作的url页面
+        map.put("redirectUrl", appConfigProperties.getPayUrl());//对应着实际支付动作的url页面
         //拉取用户openid的url拼接
-        map.put("targetUrl", WeChatApi.API_WEB_CODE.replace("APPID", ConfigConsts.getApp_id())
+        map.put("targetUrl", WeChatApiUrlConsts.WEB_CODE_URL.replace("APPID", appConfigProperties.getAppId())
                 .replace("SCOPE", "snsapi_base").replace("STATE", "hitef"));
         return "client/payForm";
     }
