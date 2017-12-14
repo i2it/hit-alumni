@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
     <title>联系我们</title>
     <link rel="stylesheet" type="text/css" href="http://res.wx.qq.com/open/libs/weui/1.1.2/weui.min.css">
-    <link rel="stylesheet" type="text/css" href="${applicationScope.globalUrlPrefix}/hitef/wechat/res/css/base.css">
+    <link rel="stylesheet" type="text/css" href="${applicationScope.globalUrlPrefix}/wechat/hitef/res/css/base.css">
     <style type="text/css">
         .div-area {
             width: 95%;
@@ -33,7 +33,7 @@
 </head>
 <body>
 <div class="container js_container">
-    <div id="top-area"><img src="${applicationScope.globalUrlPrefix}/hitef/wechat/res/img/top_img.jpg" width="100%">
+    <div id="top-area"><img src="${applicationScope.globalUrlPrefix}/wechat/hitef/res/img/top_img.jpg" width="100%">
     </div>
     <div class="div-area fund-content">
         <div class="part-body">

@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
     <title>捐款统计</title>
     <link rel="stylesheet" type="text/css" href="http://res.wx.qq.com/open/libs/weui/1.1.2/weui.min.css">
-    <link rel="stylesheet" type="text/css" href="${applicationScope.globalUrlPrefix}/hitef/wechat/res/css/base.css">
+    <link rel="stylesheet" type="text/css" href="${applicationScope.globalUrlPrefix}/wechat/hitef/res/css/base.css">
     <style type="text/css">
         #top-area {
             margin-bottom: 20px;
@@ -38,7 +38,7 @@
 </head>
 <body>
 <div class="container js_container" align="center">
-    <div id="top-area"><img src="${applicationScope.globalUrlPrefix}/hitef/wechat/res/img/top_img.jpg" width="100%">
+    <div id="top-area"><img src="${applicationScope.globalUrlPrefix}/wechat/hitef/res/img/top_img.jpg" width="100%">
     </div>
     <table width="98%">
         <thead>
@@ -56,7 +56,7 @@
         <c:forEach var="item" items="${stat.fundItemStat}">
             <tr>
                 <td>
-                    <a href="/hitef/wechat/items/${item.fundItemId}">${item.fundItemName}</a>
+                    <a href="/wechat/hitef/items/${item.fundItemId}">${item.fundItemName}</a>
                 </td>
                 <td>${item.totalCount}</td>
                 <td><fmt:formatNumber pattern="#0.00" value="${item.totalMoney}"/></td>

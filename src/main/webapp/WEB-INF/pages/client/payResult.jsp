@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
     <title>捐助结果</title>
     <link rel="stylesheet" type="text/css" href="http://res.wx.qq.com/open/libs/weui/1.1.2/weui.min.css">
-    <link rel="stylesheet" type="text/css" href="${applicationScope.globalUrlPrefix}/hitef/wechat/res/css/base.css">
+    <link rel="stylesheet" type="text/css" href="${applicationScope.globalUrlPrefix}/wechat/hitef/res/css/base.css">
     <style type="text/css">
         .div-area {
             width: 95%;
@@ -60,7 +60,7 @@
 <c:if test="${!empty out_trade_no}">
     <div>
         <img style="width: 100%;height: auto;display: block;"
-             src="${applicationScope.globalUrlPrefix}/hitef/wechat/certifications/${out_trade_no}.jpg">
+             src="${applicationScope.globalUrlPrefix}/wechat/hitef/certifications/${out_trade_no}.jpg">
         <div style="margin-top: 5px;margin-left: 16px;text-align:left;font-size: 14px;color: #999;">
             温馨提示：点击右上角中分享按钮可实现分享。
         </div>
@@ -98,28 +98,28 @@
         wx.onMenuShareAppMessage({
             title: '我参与了为母校哈工大捐款的活动，你有我捐得多吗？→ →',
             desc: '尽一份微薄之力，助力母校腾飞！',
-            link: '${applicationScope.globalUrlPrefix}/hitef/wechat/donate/certification/${out_trade_no}',
-            imgUrl: '${applicationScope.globalUrlPrefix}/hitef/wechat/certifications/${out_trade_no}.jpg',
+            link: '${applicationScope.globalUrlPrefix}/wechat/hitef/donate/certification/${out_trade_no}',
+            imgUrl: '${applicationScope.globalUrlPrefix}/wechat/hitef/certifications/${out_trade_no}.jpg',
         });
         //分享到微信朋友圈
         wx.onMenuShareTimeline({
             title: '我参与了为母校哈工大捐款的活动，你有我捐得多吗？→ →',
-            link: '${applicationScope.globalUrlPrefix}/hitef/wechat/donate/certification/${out_trade_no}',
-            imgUrl: '${applicationScope.globalUrlPrefix}/hitef/wechat/certifications/${out_trade_no}.jpg',
+            link: '${applicationScope.globalUrlPrefix}/wechat/hitef/donate/certification/${out_trade_no}',
+            imgUrl: '${applicationScope.globalUrlPrefix}/wechat/hitef/certifications/${out_trade_no}.jpg',
         });
         //分享给QQ朋友
         wx.onMenuShareQQ({
             title: '我参与了为母校哈工大捐款的活动，你有我捐得多吗？→ →',
             desc: '尽一份微薄之力，助力母校腾飞！',
-            link: '${applicationScope.globalUrlPrefix}/hitef/wechat/donate/certification/${out_trade_no}',
-            imgUrl: '${applicationScope.globalUrlPrefix}/hitef/wechat/certifications/${out_trade_no}.jpg',
+            link: '${applicationScope.globalUrlPrefix}/wechat/hitef/donate/certification/${out_trade_no}',
+            imgUrl: '${applicationScope.globalUrlPrefix}/wechat/hitef/certifications/${out_trade_no}.jpg',
         });
         //分享到QQ空间
         wx.onMenuShareQZone({
             title: '我参与了为母校哈工大捐款的活动，你有我捐得多吗？→ →',
             desc: '尽一份微薄之力，助力母校腾飞！',
-            link: '${applicationScope.globalUrlPrefix}/hitef/wechat/donate/certification/${out_trade_no}',
-            imgUrl: '${applicationScope.globalUrlPrefix}/hitef/wechat/certifications/${out_trade_no}.jpg',
+            link: '${applicationScope.globalUrlPrefix}/wechat/hitef/donate/certification/${out_trade_no}',
+            imgUrl: '${applicationScope.globalUrlPrefix}/wechat/hitef/certifications/${out_trade_no}.jpg',
         });
     });
 </script>

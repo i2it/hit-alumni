@@ -18,9 +18,8 @@
     </style>
 </head>
 <body>
-<div class="container js_container">
     <div class="weui-msg">
-        <img src="${applicationScope.globalUrlPrefix}/hitef/wechat/res/img/server_error.jpg">
+        <img src="${applicationScope.globalUrlPrefix}/wechat/hitef/res/img/server_error.jpg">
     </div>
 </div>
 </body>

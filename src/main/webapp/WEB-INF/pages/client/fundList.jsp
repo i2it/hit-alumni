@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
     <title>筹款基金项目列表</title>
     <link rel="stylesheet" type="text/css" href="http://res.wx.qq.com/open/libs/weui/1.1.2/weui.min.css">
-    <link rel="stylesheet" type="text/css" href="${applicationScope.globalUrlPrefix}/hitef/wechat/res/css/base.css">
+    <link rel="stylesheet" type="text/css" href="${applicationScope.globalUrlPrefix}/wechat/hitef/res/css/base.css">
     <style type="text/css">
         .funds {
             margin-top: 10px;
@@ -53,19 +53,19 @@
 </head>
 <body>
 <div class="container js_container">
-    <div><img src="${applicationScope.globalUrlPrefix}/hitef/wechat/res/img/top_img.jpg" width="100%"></div>
+    <div><img src="${applicationScope.globalUrlPrefix}/wechat/hitef/res/img/top_img.jpg" width="100%"></div>
     <div class="funds">
         <ul>
             <c:if test="${not empty fundItem}">
-                <li><a href="/hitef/wechat/items/${fundItem.id}">
+                <li><a href="/wechat/hitef/items/${fundItem.id}">
                         ${fundItem.name}
-                    <span><img src="${applicationScope.globalUrlPrefix}/hitef/wechat/res/img/arrow.png" width="125%"></span></a>
+                    <span><img src="${applicationScope.globalUrlPrefix}/wechat/hitef/res/img/arrow.png" width="125%"></span></a>
                 </li>
             </c:if>
             <c:forEach items="${fundItems}" var="item">
-                <li><a href="/hitef/wechat/items/${item.id}">
+                <li><a href="/wechat/hitef/items/${item.id}">
                         ${item.name}
-                    <span><img src="${applicationScope.globalUrlPrefix}/hitef/wechat/res/img/arrow.png"
+                    <span><img src="${applicationScope.globalUrlPrefix}/wechat/hitef/res/img/arrow.png"
                                width="125%"></span></a>
                 </li>
             </c:forEach>

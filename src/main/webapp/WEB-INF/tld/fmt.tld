@@ -11,7 +11,7 @@
     <tag>
         <name>formatDate</name>
         <tag-class>net.i2it.hit.hitef.tld.FormatDateTag</tag-class>
-        <fundItemName-content>empty</fundItemName-content>
+        <body-content>empty</body-content>
         <attribute>
             <name>value</name>
             <required>true</required>

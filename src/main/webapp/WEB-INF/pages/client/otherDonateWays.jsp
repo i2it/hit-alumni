@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
     <title>其他捐款方式</title>
     <link rel="stylesheet" type="text/css" href="http://res.wx.qq.com/open/libs/weui/1.1.2/weui.min.css">
-    <link rel="stylesheet" type="text/css" href="${applicationScope.globalUrlPrefix}/hitef/wechat/res/css/base.css">
+    <link rel="stylesheet" type="text/css" href="${applicationScope.globalUrlPrefix}/wechat/hitef/res/css/base.css">
     <style type="text/css">
         .div-area {
             width: 95%;
@@ -33,7 +33,7 @@
 </head>
 <body>
 <div class="container js_container">
-    <div id="top-area"><img src="${applicationScope.globalUrlPrefix}/hitef/wechat/res/img/top_img.jpg" width="100%">
+    <div id="top-area"><img src="${applicationScope.globalUrlPrefix}/wechat/hitef/res/img/top_img.jpg" width="100%">
     </div>
     <div class="div-area fund-content">
         <div class="part-body">
@@ -49,7 +49,7 @@
         <div class="part-body">
             <h3 style="display: inline-block;min-width: 6em;">二、支付宝捐赠</h3>
             <%--<p><a href="https://qr.alipay.com/apkzstqspjtdyvtg77">支付宝快捷捐赠链接，点此进行捐赠 &gt;&gt;</a></p>--%>
-            <p><img src="/hitef/wechat/res/img/alipay_qrcode.png" alt="支付宝快捷支付二维码" width="100%"></p>
+            <p><img src="/wechat/hitef/res/img/alipay_qrcode.png" alt="支付宝快捷支付二维码" width="100%"></p>
         </div>
         <div class="part-body">
             <h3>三、现金捐赠</h3>

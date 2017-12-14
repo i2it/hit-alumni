@@ -17,34 +17,8 @@ public class FundInfoService {
         return fundItemDAO.listAllFundItemByStatus(1);
     }
 
-    public List<FundItemDO> getStopedFundItems() {
-        return fundItemDAO.listAllFundItemByStatus(0);
-    }
-
     public FundItemDO getFundItemById(int id) {
         return fundItemDAO.getById(id);
-    }
-
-    public boolean isUpdated(FundItemDO fundItem) {
-        if (fundItemDAO.update(fundItem) == 1) {
-            return true;
-        }
-        return false;
-    }
-
-    public boolean isStoped(int id) {
-        int tmp = (int) (System.currentTimeMillis() / 1000);
-        if (fundItemDAO.update2StopById(id, tmp) == 1) {
-            return true;
-        }
-        return false;
-    }
-
-    public boolean isSaved(FundItemDO fundItem) {
-        if (fundItemDAO.save(fundItem) == 1) {
-            return true;
-        }
-        return false;
     }
 
     public List<FundItemDO> getSchoolNormalFundItems() {

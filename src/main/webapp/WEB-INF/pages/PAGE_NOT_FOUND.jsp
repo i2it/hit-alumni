@@ -20,7 +20,7 @@
 <body>
 <div class="container js_container">
     <div class="weui-msg">
-        <img src="${applicationScope.globalUrlPrefix}/hitef/wechat/res/img/not_found.png">
+        <img src="${applicationScope.globalUrlPrefix}/wechat/hitef/res/img/not_found.png">
     </div>
 </div>
 </body>

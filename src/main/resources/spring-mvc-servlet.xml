@@ -9,10 +9,10 @@
 
     <mvc:annotation-driven/>
     <!-- 处理静态资源问题 -->
-    <mvc:resources mapping="/hitef/wechat/res/**" location="/WEB-INF/resources/"/>
-    <mvc:resources mapping="/hitef/wechat/*" location="/WEB-INF/classes/"/>
-    <mvc:resources mapping="/hitef/wechat/pictures/*" location="/WEB-INF/pictures/"/>
-    <mvc:resources mapping="/hitef/wechat/certifications/*" location="/WEB-INF/classes/certifications/"/>
+    <mvc:resources mapping="/wechat/hitef/res/**" location="/WEB-INF/resources/"/>
+    <mvc:resources mapping="/wechat/hitef/*" location="/WEB-INF/classes/"/>
+    <mvc:resources mapping="/wechat/hitef/pictures/*" location="/WEB-INF/pictures/"/>
+    <mvc:resources mapping="/wechat/hitef/certifications/*" location="/WEB-INF/classes/certifications/"/>
     <mvc:default-servlet-handler/>
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">

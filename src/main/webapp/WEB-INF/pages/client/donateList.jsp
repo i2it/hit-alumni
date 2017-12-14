@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
     <title>捐款名录</title>
     <link rel="stylesheet" type="text/css" href="http://res.wx.qq.com/open/libs/weui/1.1.2/weui.min.css">
-    <link rel="stylesheet" type="text/css" href="${applicationScope.globalUrlPrefix}/hitef/wechat/res/css/base.css">
+    <link rel="stylesheet" type="text/css" href="${applicationScope.globalUrlPrefix}/wechat/hitef/res/css/base.css">
     <style type="text/css">
         #top-area {
             margin-bottom: 20px;
@@ -29,7 +29,7 @@
 </head>
 <body>
 <div class="container js_container">
-    <div id="top-area"><img src="${applicationScope.globalUrlPrefix}/hitef/wechat/res/img/top_img.jpg" width="100%">
+    <div id="top-area"><img src="${applicationScope.globalUrlPrefix}/wechat/hitef/res/img/top_img.jpg" width="100%">
     </div>
     <c:forEach var="item" items="${donateList}">
         <div class="weui-form-preview">
@@ -67,7 +67,7 @@
     <%--暂时不提供上一页功能，用户可通过返回键查看上一页内容--%>
     <%--<a href="">上一页</a>--%>
     <c:if test="${donateList.size()==20}">
-        <a href="${applicationScope.globalUrlPrefix}/hitef/wechat/donate/list?date=<fmt:formatDate value="${dateObj}" pattern="yyyy-MM-dd HH:mm:ss"/>">下一页</a>
+        <a href="${applicationScope.globalUrlPrefix}/wechat/hitef/donate/list?date=<fmt:formatDate value="${dateObj}" pattern="yyyy-MM-dd HH:mm:ss"/>">下一页</a>
     </c:if>
 </div>
 </body>

@@ -57,20 +57,6 @@ public class DonateService {
     }
 
     /**
-     * 处理参数字符串，获取包含的订单简单信息
-     *
-     * @param itemInfo
-     * @return
-     */
-    public SimpleOrderInfoVO getSimpleOrderInfo(String itemInfo) {
-        String[] arr = itemInfo.split("_");
-        if (arr.length == 3) {
-            return new SimpleOrderInfoVO(arr[0], arr[1], arr[2], arr[3]);
-        }
-        return null;
-    }
-
-    /**
      * 主要负责用于构建生成网页端js发起支付请求时需要数据的承载结构 PayRequestVO
      */
     public Map<String, Object> getPayRequestInfo(String code, PrepayInfoVO prepayInfoVO) {

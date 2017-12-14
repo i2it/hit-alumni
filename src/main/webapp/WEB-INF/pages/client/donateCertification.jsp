@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
     <title>我的捐助证书</title>
     <link rel="stylesheet" type="text/css" href="http://res.wx.qq.com/open/libs/weui/1.1.2/weui.min.css">
-    <link rel="stylesheet" type="text/css" href="${applicationScope.globalUrlPrefix}/hitef/wechat/res/css/base.css">
+    <link rel="stylesheet" type="text/css" href="${applicationScope.globalUrlPrefix}/wechat/hitef/res/css/base.css">
     <style type="text/css">
         .div-area {
             width: 95%;
@@ -46,14 +46,14 @@
 </head>
 <body>
 <div class="container js_container">
-    <div><img src="${applicationScope.globalUrlPrefix}/hitef/wechat/res/img/top_img.jpg" width="100%"></div>
+    <div><img src="${applicationScope.globalUrlPrefix}/wechat/hitef/res/img/top_img.jpg" width="100%"></div>
     <div class="div-area fund-content">
         <div class="hd-content"><h3>捐助证书</h3></div>
         <div class="fund-body"><img style="width: 100%;height: auto;display: block;" alt="捐助证书"
-                                    src="${applicationScope.globalUrlPrefix}/hitef/wechat/certifications/${out_trade_no}.jpg">
+                                    src="${applicationScope.globalUrlPrefix}/wechat/hitef/certifications/${out_trade_no}.jpg">
         </div>
     </div>
-    <div style="margin-left: 25px;"><a href="/hitef/wechat/items">我也要去捐助，助母校腾飞！</a></div>
+    <div style="margin-left: 25px;"><a href="/wechat/hitef/items">我也要去捐助，助母校腾飞！</a></div>
 </div>
 </body>
 </html>

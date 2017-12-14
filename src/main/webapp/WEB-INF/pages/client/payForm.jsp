@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
     <title>${item.name}</title>
     <link rel="stylesheet" type="text/css" href="http://res.wx.qq.com/open/libs/weui/1.1.2/weui.min.css">
-    <link rel="stylesheet" type="text/css" href="${applicationScope.globalUrlPrefix}/hitef/wechat/res/css/base.css">
+    <link rel="stylesheet" type="text/css" href="${applicationScope.globalUrlPrefix}/wechat/hitef/res/css/base.css">
     <style type="text/css">
         .div-area {
             width: 95%;
@@ -49,12 +49,12 @@
 </head>
 <body>
 <div class="container js_container">
-    <div><img src="${applicationScope.globalUrlPrefix}/hitef/wechat/res/img/top_img.jpg" width="100%"></div>
+    <div><img src="${applicationScope.globalUrlPrefix}/wechat/hitef/res/img/top_img.jpg" width="100%"></div>
     <div class="div-area fund-content">
         <div class="hd-content"><h3>${item.name}</h3></div>
         <div class="fund-fundItemName">
             <p>${item.desc}</p>
-            <c:if test="${not empty item.pictureName}"><img src="/hitef/wechat/pictures/${item.pictureName}" width="100%"></c:if>
+            <c:if test="${not empty item.pictureName}"><img src="/wechat/hitef/pictures/${item.pictureName}" width="100%"></c:if>
         </div>
     </div>
     <div class="weui-cells weui-cells_form div-area donate-area">

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
     <title>正在跳转...</title>
     <link rel="stylesheet" type="text/css" href="http://res.wx.qq.com/open/libs/weui/1.1.2/weui.min.css">
-    <link rel="stylesheet" type="text/css" href="${applicationScope.globalUrlPrefix}/hitef/wechat/res/css/base.css">
+    <link rel="stylesheet" type="text/css" href="${applicationScope.globalUrlPrefix}/wechat/hitef/res/css/base.css">
 </head>
 <body>
 <div class="weui-loadmore bd-m-t">
@@ -46,10 +46,10 @@
             signType: '${requestScope.payInfo.signType}',
             paySign: '${requestScope.payInfo.paySign}',
             success: function () {
-                window.location.href = "${applicationScope.globalUrlPrefix}/hitef/wechat/test/?action=getDonatorFormPage&outTradeNo=${out_trade_no}"
+                window.location.href = "${applicationScope.globalUrlPrefix}/wechat/hitef/test/?action=getDonatorFormPage&outTradeNo=${out_trade_no}"
             },
             cancel: function () {
-                window.location.href = "${applicationScope.globalUrlPrefix}/hitef/wechat/items/${fundItemId}";
+                window.location.href = "${applicationScope.globalUrlPrefix}/wechat/hitef/items/${fundItemId}";
             }
         });
     }
