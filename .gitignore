@@ -12,14 +12,29 @@
 hs_err_pid*
 
 
-src/test/
-target/
-# ignored when using intellij idea
-.idea/
-out/
-hit-alumni.iml
-# ignored when using eclipse
-.settings/
-bin/
+
+/target/
+!.mvn/wrapper/maven-wrapper.jar
+
+### STS ###
+.apt_generated
 .classpath
+.factorypath
 .project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/build/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/

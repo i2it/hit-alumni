@@ -1,0 +1,30 @@
+spring:
+  profiles:
+    active: dev
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      maximum-pool-size: 30
+  mvc:
+    view:
+      prefix: /WEB-INF/pages/
+      suffix: .jsp
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+server:
+  context-path: /wechat/hitef
+logging:
+  level: info
+
+wechat:
+  hitef:
+    app-id: wx38dd425fe9aaa63d
+    app-secret: 5fc70a64f3dbe758b85cb292d339859b
+    token: 76015ef79f37174731055084d8d77005
+    mch-id: 1481700242
+    api-secret: klCoDams19j5p34NSUkNdy0SQP9Fuqai
+    js-sdk-debug: false
+    js-api-list: ['hideAllNonBaseMenuItem','showMenuItems','chooseWXPay','onMenuShareAppMessage','onMenuShareTimeline','onMenuShareQQ','onMenuShareQZone']
